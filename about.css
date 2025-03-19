@@ -11,13 +11,30 @@ body {
 header {
     background-color: #5D4037; 
     color: rgb(255, 255, 255);
-    padding: 5px 15px;
-    text-align: center;
+    padding: 20px 50px;
+    text-align: left;
+    font-size: 16px;
+}
+nav {
+    position: absolute;
+    top: 45px;
+    right: 40px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+
+nav a:hover {
+    color: white; 
 }
 h1 {
     color: #ffffff; 
     margin-bottom: 10px; 
-    font-size: 18px;
+    font-size: 25px;
 }
 h2 {
     color: #5D4037; 
@@ -70,6 +87,12 @@ footer {
     background-color: #5D4037; 
     color: white;
     font-size: 0.8em;
+}
+blockquote#quote {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #FFEBEE; 
 }
 mark {
     background-color: yellow;
