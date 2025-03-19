@@ -11,13 +11,28 @@ body {
 header {
     background-color: #5D4037; 
     color: rgb(255, 255, 255);
-    padding: 5px 15px;
-    text-align: center;
+    padding: 20px 50px;
+    text-align: left;
+    font-size: 16px;
+}
+nav {
+    position: absolute;
+    top: 45px;
+    right: 40px;
+}
+nav a {
+    margin: 0 5px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+nav a:hover {
+    color: white; 
 }
 h1 {
     color: #ffffff; 
     margin-bottom: 10px; 
-    font-size: 18px;
+    font-size: 25px;
 }
 h2 {
     color: #5D4037; 
@@ -52,12 +67,33 @@ ul {
     text-align:justify;
     line-height: 1.3;
 }
+.explore-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #5D4037; /* Warna biru */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #e48f76; 
+}
+
 footer {
     text-align:center;
     padding: 5px;
     background-color: #5D4037;
     color: white;
     font-size: 0.8em;
+}
+blockquote#quote {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #FFEBEE; 
 }
 mark {
     background-color: yellow;
@@ -67,3 +103,4 @@ section {
 padding-left: 250px; 
 padding-right: 250px; 
 }
+
