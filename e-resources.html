@@ -4,7 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Resources - Perpustakaan Personal</title>
-    <link rel="stylesheet" href="e-resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; 
+    color: #5D4037;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+header {
+    background-color: #5D4037; 
+    color: rgb(255, 255, 255);
+    padding: 20px 50px;
+    text-align: center;
+    font-size: 16px;
+}
+nav {
+    position: center;
+    top: 45px;
+    right: 40px;
+}
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+nav a:hover {
+    color: white; 
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s;
+    }
+h1 {
+    color: #ffffff; 
+    margin-bottom: 10px; 
+    font-size: 25px;
+}
+h2 {
+    color: #5D4037; 
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+    text-align: center;
+}
+h3 {
+    margin-top: 15px; 
+    margin-bottom: 5px; 
+    text-align: justify;
+    font-size: 18px;
+}
+h4 {
+    margin-top: 15px; 
+    margin-bottom: 5px; 
+    text-align: justify;
+    font-size: 18px;
+}
+a:hover {
+    color: brown;
+    font-weight: bold;
+}
+p {
+    line-height: 1.3;
+    margin-bottom: 20px; 
+    text-align:justify;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 2px solid #5D4037;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    background-color: #ffffff;
+}
+th {
+    background-color: #ffffff; 
+    color: #5D4037;
+}
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #5D4037; 
+    color: white;
+    font-size: 0.8em;
+}
+blockquote#quote {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #FFEBEE; 
+}
+mark {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+    </style>
 </head>
 
 <script src="e-resources.js"></script>
@@ -19,6 +131,7 @@
     </nav>
 </header>
     <section>
+        <div class="container">
         <h1><input type="text" id="searchInput" placeholder="Cari pada halaman..." />
             <button id="searchButton">Cari</button></h1>
             <p id="searchResult"></p>
@@ -83,6 +196,7 @@
                 <td><a href="files/penelusuran literatur teori/PL-STBI-1.pptx" download>Unduh</a></td>
             </tr>
         </table>
+        </div>
     </main>
 </section>
 </p>
