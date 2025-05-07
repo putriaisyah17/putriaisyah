@@ -11,6 +11,6 @@
     <a href="tabel2.php">Tabel 2</a><br>
     <a href="tabel3.php">Tabel 3</a><br>
     <a href="tabel_perkalian.php">Tabel Perkalian 10x10</a><br>
-    <a href="formulir.php">Formulir</a>
+    <a href="form.php">Formulir</a>
 </body>
 </html>
