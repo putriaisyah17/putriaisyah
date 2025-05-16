@@ -53,28 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    <script>
-  window.onload = function() {
-    const banner = document.getElementById('cookieBanner');
-    const cookieStatus = localStorage.getItem('cookieConsent');
-
-    if (cookieStatus === 'accepted' || cookieStatus === 'rejected') {
-      banner.style.display = 'none';
-    }
-
-    document.getElementById('acceptCookies').onclick = function() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      banner.style.display = 'none';
-    };
-
-    document.getElementById('rejectCookies').onclick = function() {
-      localStorage.setItem('cookieConsent', 'rejected');
-      banner.style.display = 'none';
-    };
-  }
-</script>
-
-
     // Tambahkan efek bintang jatuh di header
     const style = document.createElement("style");
     style.innerHTML = `
