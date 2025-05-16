@@ -53,6 +53,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    <script>
+  window.onload = function() {
+    const banner = document.getElementById('cookieBanner');
+    const cookieStatus = localStorage.getItem('cookieConsent');
+
+    if (cookieStatus === 'accepted' || cookieStatus === 'rejected') {
+      banner.style.display = 'none';
+    }
+
+    document.getElementById('acceptCookies').onclick = function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.style.display = 'none';
+    };
+
+    document.getElementById('rejectCookies').onclick = function() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      banner.style.display = 'none';
+    };
+  }
+</script>
+
+
     // Tambahkan efek bintang jatuh di header
     const style = document.createElement("style");
     style.innerHTML = `
@@ -102,45 +124,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setInterval(createStarConfetti, 300);
-
-    // ==============================
-    // FUNGSI COOKIE & PENGGUNA
-    // ==============================
-
-    function setCookie(name, value, days) {
-        const d = new Date();
-        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + d.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-
-    function getCookie(name) {
-        const cname = name + "=";
-        const decodedCookie = decodeURIComponent(document.cookie);
-        const ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i].trim();
-            if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
-        }
-        return "";
-    }
-
-    function checkCookie() {
-        let username = getCookie("username");
-        if (username != "") {
-            alert("Selamat datang kembali, " + username + "!");
-        } else {
-            username = prompt("Selamat datang! Siapa nama kamu?");
-            if (username && username.trim() !== "") {
-                setCookie("username", username, 7);
-                alert("Hai " + username + ", senang bertemu denganmu!");
-            }
-        }
-    }
-
-    // Jalankan pengecekan cookie setelah animasi selesai
-    setTimeout(() => {
-        checkCookie();
-    }, 1600);
-
 });
