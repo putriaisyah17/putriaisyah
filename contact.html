@@ -42,6 +42,31 @@ nav a {
     text-decoration: none;
     transition: color 0.3s; 
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 1000;
+  top: 120%;   /* posisi di bawah link */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 nav a:hover {
     color: white; 
@@ -140,10 +165,18 @@ blockquote#quote {
 <header>
     <h1>Perpustakaan Personal Putri Aisyah Silalahi</h1>
     <nav>
-  <a href="about.html" title="Informasi tentang perpustakaan ini">Tentang Kami</a>
-  <a href="index.html" title="Kembali ke halaman utama">Home</a>
-  <a href="e-resources.html" title="Lihat berbagai sumber daya elektronik yang tersedia">Sumber Daya Elektronik</a>
-  <a href="http://localhost/pengembanganwebputri/latihan.php" title="Latihan dasar-dasar PHP">Latihan PHP</a>
+  <a href="index.html" class="tooltip">Home
+    <span class="tooltiptext">Kembali ke halaman utama</span>
+  </a>
+  <a href="e-resources.html" class="tooltip">Sumber Daya Elektronik
+    <span class="tooltiptext">Lihat berbagai sumber daya elektronik yang tersedia</span>
+  </a>
+  <a href="about.html" class="tooltip">Tentang Kami
+    <span class="tooltiptext">Informasi tentang perpustakaan ini</span>
+  </a>
+  <a href="http://localhost/pengembanganwebputri/latihan.php" class="tooltip">Latihan PHP
+    <span class="tooltiptext">Latihan dasar-dasar PHP</span>
+  </a>
 </nav>
 
 </header>
