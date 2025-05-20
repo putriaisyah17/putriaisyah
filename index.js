@@ -26,16 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
         exploreButton.style.transform = "scale(1)";
     });
 
-    // Tambahkan fungsi pencarian di halaman dengan highlight
+    // Fungsi pencarian dengan highlight
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
     const searchResult = document.getElementById("searchResult");
     const contentContainer = document.querySelector("#home .container");
     let originalContent = contentContainer.innerHTML;
-    
+
     searchButton.addEventListener("click", function () {
         let searchText = searchInput.value.toLowerCase();
-        
         if (searchText.trim() === "") {
             alert("Masukkan kata kunci terlebih dahulu!");
             return;
@@ -60,18 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         @keyframes wave {
             0% { transform: rotate(0deg); }
             50% { transform: rotate(2deg); }
             100% { transform: rotate(-2deg); }
         }
-
         @keyframes fall {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
             100% { transform: translateY(300%) rotate(360deg); opacity: 0; }
         }
-
         .star {
             position: absolute;
             color: white;
@@ -102,4 +98,57 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setInterval(createStarConfetti, 300);
+
+    // ===========================
+    // COOKIE CONSENT START
+    // ===========================
+
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i].trim();
+            if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+        }
+        return "";
+    }
+
+    const popup = document.getElementById("cookieConsent");
+    const acceptBtn = document.getElementById("acceptCookie");
+    const declineBtn = document.getElementById("declineCookie");
+
+    const consent = getCookie("cookie_consent");
+
+    if (consent !== "accepted" && consent !== "declined") {
+        if (popup) popup.style.display = "flex"; // Atau 'block' jika tanpa style
+    } else {
+        if (popup) popup.style.display = "none";
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener("click", function () {
+            setCookie("cookie_consent", "accepted", 30);
+            if (popup) popup.style.display = "none";
+        });
+    }
+
+    if (declineBtn) {
+        declineBtn.addEventListener("click", function () {
+            setCookie("cookie_consent", "declined", 30);
+            if (popup) popup.style.display = "none";
+        });
+    }
+
+    // ===========================
+    // COOKIE CONSENT END
+    // ===========================
+
 });
